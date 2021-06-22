@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Unit_test_sample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Fundamentals\" />
+    <Folder Include="Mocking\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Unit-test-sample.UnitTest\obj\Unit-test-sample.UnitTest.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.TestPlatform" Version="14.0.0" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+  </ItemGroup>
+</Project>
