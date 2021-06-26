@@ -4,17 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Unit_test_sample.UnitTest</RootNamespace>
 
+    <OutputType>Library</OutputType>
     <IsPackable>false</IsPackable>
+   <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.4" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.4" />
     <PackageReference Include="coverlet.collector" Version="3.0.3"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 <PrivateAssets>all</PrivateAssets>
 </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.TestPlatform" Version="14.0.0" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
   </ItemGroup>

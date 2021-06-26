@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using Unit_test_sample.Fundamentals;
 
-namespace Unit_test_sample.UnitTest
+namespace Unit_test_sample.UnitTest.BusinessTest
 {
     
      //mStEST: [TestClass]
