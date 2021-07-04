@@ -22,6 +22,8 @@ namespace Unit_test_sample.UnitTest
         }
 
         [Test]
+        [Category("ignored")]
+        [Ignore("test ignore")] //used to group test
          public void CheckIfCharacterDead()
         {
            //  Character c = new Character(CharacterType.Elf, "Isah");
@@ -30,6 +32,8 @@ namespace Unit_test_sample.UnitTest
         }
 
         [Test]
+        [Category("ignored")]
+        [Ignore("test ignore")]
         public void CheckEmptyName()
         {
            // Character c = new Character(CharacterType.Elf, "");
@@ -68,25 +72,5 @@ namespace Unit_test_sample.UnitTest
                 yield return new int[] {100};
             }
         }
-
-
-        //NON PARAMERIZED TEST
-        //    [Test]
-        //     public void DefaultHealthIs100()
-        //     {
-        //        // Character c = new Character(CharacterType.Elf, "Gogo");
-        //         const double expectedHealth = 130;
-        //         Assert.That(_character.Health, Is.LessThanOrEqualTo(expectedHealth));
-        //         Assert.That(_character.Health, Is.Positive);
-        //     }
-
-        //     [Test]
-        //     public void DefaultHealthIs120()
-        //     {
-        //        // Character c = new Character(CharacterType.Elf, "Gogo");
-        //         const double expectedHealth = 120;
-        //         Assert.That(_character.Health, Is.LessThanOrEqualTo(expectedHealth));
-        //         Assert.That(_character.Health, Is.Positive);
-        //     }
     }
 }
