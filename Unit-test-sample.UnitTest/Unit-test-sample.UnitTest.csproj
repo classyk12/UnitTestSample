@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Unit_test_sample.UnitTest</RootNamespace>
-
+ <IsTestProject>false</IsTestProject>
     <OutputType>Library</OutputType>
     <IsPackable>false</IsPackable>
    <GenerateProgramFile>false</GenerateProgramFile>

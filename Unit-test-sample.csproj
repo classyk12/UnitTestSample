@@ -4,7 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Unit_test_sample</RootNamespace>
     <OutputType>Library</OutputType>
-    <GenerateProgramFile>false</GenerateProgramFile>
+    <IsPackable>false</IsPackable>
+   <GenerateProgramFile>false</GenerateProgramFile>
+   <IsTestProject>false</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
