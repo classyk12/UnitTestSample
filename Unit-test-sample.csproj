@@ -17,6 +17,7 @@
     <Content Remove="Unit-test-sample.UnitTest\obj\Unit-test-sample.UnitTest.csproj.nuget.dgspec.json" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
