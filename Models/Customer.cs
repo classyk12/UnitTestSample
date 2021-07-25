@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace Unit_test_sample.Models
 {
@@ -15,6 +16,13 @@ namespace Unit_test_sample.Models
         [BsonElement("PhoneNumber")]
         public string Contact { get; set; }
         [Required(ErrorMessage = "Email is required")]
+        public string Email { get; set; }
+    }
+
+    public class CustomerDto{
+
+        public string FullName { get; set; }
+        public string Mobile { get; set; }
         public string Email { get; set; }
     }
 }

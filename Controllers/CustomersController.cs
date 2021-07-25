@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Unit_test_sample.Interfaces;
@@ -17,24 +19,25 @@ namespace Unit_test_sample.Fundamentals
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<List<CustomerDto>>> GetAll()
         {
-            return Ok(await _customerService.GetAllAsync());
+            var items = (await _customerService.GetAllAsync()).Select(c => c.AsDto()).ToList();
+            return items;
         }
 
         [HttpGet("GetCustomer/{id}")]
-        public async Task<IActionResult> GetCustomer([FromRoute] string id)
+        public async Task<ActionResult<CustomerDto>> GetCustomer([FromRoute] string id)
         {
             var customer = await _customerService.GetByIdAsync(id);
             if (customer == null)
             {
                 return NotFound();
             }
-            return Ok(customer);
+            return customer.AsDto();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Customer customer)
+        public async Task<ActionResult<Customer>> Create([FromBody] Customer customer)
         {
             if (!ModelState.IsValid)
             {
@@ -52,11 +55,11 @@ namespace Unit_test_sample.Fundamentals
             }
             
             await _customerService.CreateAsync(customer);
-            return Ok(customer.Id);
+            return customer;
         }
 
         [HttpPut("UpdateCustomer/{id}")]
-        public async Task<IActionResult> Update([FromRoute] string id, Customer customerIn)
+        public async Task<ActionResult> Update([FromRoute] string id, Customer customerIn)
         {
             var customer = await _customerService.GetByIdAsync(id);
             if (customer == null)
@@ -68,7 +71,7 @@ namespace Unit_test_sample.Fundamentals
         }
 
         [HttpDelete("RemoveCustomer/{id}")]
-        public async Task<IActionResult> Delete([FromRoute] string id)
+        public async Task<ActionResult> Delete([FromRoute] string id)
         {
             var customer = await _customerService.GetByIdAsync(id);
             if (customer == null)
