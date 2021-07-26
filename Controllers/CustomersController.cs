@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,10 +20,16 @@ namespace Unit_test_sample.Fundamentals
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<CustomerDto>>> GetAll()
+        public async Task<ActionResult<List<CustomerDto>>> GetAll(string searchParam = null)
         {
-            var items = (await _customerService.GetAllAsync()).Select(c => c.AsDto()).ToList();
-            return items;
+            var items = await _customerService.GetAllAsync();
+
+            if(!string.IsNullOrEmpty(searchParam))
+            {
+                items = items.Where(c => c.FirstName.Contains(searchParam, StringComparison.OrdinalIgnoreCase) || 
+               c.LastName.Contains(searchParam, StringComparison.OrdinalIgnoreCase) ).ToList();
+            }
+            return items.Select(c => c.AsDto()).ToList();
         }
 
         [HttpGet("GetCustomer/{id}")]

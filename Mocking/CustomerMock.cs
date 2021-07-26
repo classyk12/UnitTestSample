@@ -27,5 +27,17 @@ namespace Unit_test_sample.Models
             }
             return customers;
         }
+
+        public static List<Customer> GenerateListOfCustomer()
+        {
+           var customers = new List<Customer>
+           {
+               new Customer {FirstName = "tester"},
+               new Customer {FirstName = "van-tester"},
+               new Customer {FirstName = "skilashi"},
+           };
+
+           return customers;
+        }
     }
 }
